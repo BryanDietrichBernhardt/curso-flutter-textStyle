@@ -13,10 +13,49 @@ class MyApp extends StatelessWidget {
       // definir tema padrão para o MaterialApp mudando o tema de todo o app
       theme: ThemeData(
         fontFamily: 'Montserrat',
+        colorScheme: ColorScheme(
+          brightness: Brightness.light,
+          primary: Colors.green.shade400,
+          secondary: Colors.green.shade400,
+          background: Colors.white,
+          surface: Colors.green.shade400,
+          error: Colors.red.shade400,
+          onPrimary: Colors.white,
+          onSecondary: Colors.white,
+          onBackground: Colors.white,
+          onSurface: Colors.white,
+          onError: Colors.white,
+        ),
       ),
+
+      darkTheme: ThemeData(
+        fontFamily: 'Montserrat',
+        colorScheme: ColorScheme(
+          brightness: Brightness.dark,
+          primary: Colors.blue.shade400,
+          secondary: Colors.blue.shade400,
+          background: Colors.white,
+          surface: Colors.blue.shade400,
+          error: Colors.red.shade400,
+          onPrimary: Colors.white,
+          onSecondary: Colors.white,
+          onBackground: Colors.white,
+          onSurface: Colors.white,
+          onError: Colors.white,
+        ),
+      ),
+
+      themeMode: ThemeMode.dark,
+
       debugShowCheckedModeBanner: false,
-      home: const Scaffold(
-        body: Center(
+      home: Scaffold(
+        appBar: AppBar(
+          leading: const Icon(
+            Icons.menu_rounded,
+            size: 36,
+          ),
+        ),
+        body: const Center(
           child: Text(
             'Fonte padrão material',
             style: TextStyle(
